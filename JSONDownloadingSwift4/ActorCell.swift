@@ -13,6 +13,16 @@ class ActorCell: UITableViewCell {
     @IBOutlet var nameLbl: UILabel!
     @IBOutlet var DOBLbl: UILabel!
     @IBOutlet var imgView: UIImageView!
+
+    var tId: String!
+    
+    func configure(tourney: Tourney) {
+        tId = tourney.href        // configure the labels, etc in the cell
+    }
+    
+    func get_id() -> String{
+        return tId;      // configure the labels, etc in the cell
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
