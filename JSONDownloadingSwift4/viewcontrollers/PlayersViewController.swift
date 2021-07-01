@@ -7,52 +7,72 @@
 //
 
 import UIKit
+import LBTATools
 
-class PlayersViewController: UIViewController, UITableViewDataSource {
+class PlayersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
   //  private var actors = [Actor]()
-    public var Tid: String!
-    private var players = [Player]()
-    @IBOutlet var tableView: UITableView!
     
+    private var players = [Player]()
+   @IBOutlet var nextt: UITabBarItem!
+    @IBOutlet var tview: UITableView!
+
+     public var tId: String = ""
+    
+      let segmentedControl: UISegmentedControl = {
+          let sc = UISegmentedControl(items: ["Игроки", "Описание" , "Сетка"])
+          sc.selectedSegmentIndex = 0
+          sc.addTarget(self, action: #selector(handleSegmentChange), for: .valueChanged)
+          return sc
+      }()
+      
+      @objc fileprivate func handleSegmentChange() {
+          print(segmentedControl.selectedSegmentIndex)
+          
+       /*   switch segmentedControl.selectedSegmentIndex {
+          case 0:
+              rowsToDisplay = games
+          case 1:
+              rowsToDisplay = tvShows
+          default:
+              rowsToDisplay = devices
+          }
+       */
+          tview.reloadData()
+      }
+     
+     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var controller =   self.tabBarController as! ttabsBarController
-        Tid = controller.get_tid()
-        downloadJson()
-        tableView.tableFooterView = UIView()
+       
+      tview.delegate = self
+       tview.dataSource = self
+       downloadJson()
+        print(players)
+  //      tableView.tableFooterView = UIView()
+        let paddedStackView = UIStackView(arrangedSubviews: [segmentedControl])
+             paddedStackView.layoutMargins = .init(top: 12, left: 12, bottom: 6, right: 12)
+             paddedStackView.isLayoutMarginsRelativeArrangement = true
+             
+             let stackView = UIStackView(arrangedSubviews: [
+                 paddedStackView, tview
+                 ])
+             stackView.axis = .vertical
+             
+             view.addSubview(stackView)
+             stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .zero)
     }
     
+      func set_tid(tid: String) {
+          self.tId = tid        // configure the labels, etc in the cell
+      }
+      func get_tid() -> String{
+      
+          return self.tId
+      }
+      
     
 
-    func downloadJson() {
-     
-    let url_1 = "http://1.u0156265.z8.ru/old/index.php?id=29&t="
-   // let url_2 = Tid ?? "t/3680617"
-    let url = URL(string: url_1 + Tid)
-     // print(Tid)
-       // print(url_1+url_2)
-        guard let downloadURL = url else { return }
-        URLSession.shared.dataTask(with: downloadURL) { data, urlResponse, error in
-            guard let data = data, error == nil, urlResponse != nil else {
-                print("something is wrong")
-                return
-            }
-            let outputStr  = String(data: data, encoding: String.Encoding.utf8) as String!
-            print(outputStr)
-            do
-            {
-                let decoder = JSONDecoder()
-                let downloadedActors = try decoder.decode(Players.self, from: data)
-                
-                self.players = downloadedActors.players
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch {
-              print(error)
-            }
-        }.resume()
-    }
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return players.count
@@ -80,9 +100,37 @@ class PlayersViewController: UIViewController, UITableViewDataSource {
         }  */
         return cell
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // guard segue.identifier == "GoToDetails" else { return }
-    
-    }
+  
+    func downloadJson() {
+        
+       let url_1 = "http://1.u0156265.z8.ru/old/index.php?id=29&t="
+      let url_2 =  "t/3986846"
+           //get_tid() ??
+       let url = URL(string: url_1 + url_2)
+         print(url)
+          // print(url_1+url_2)
+           guard let downloadURL = url else { return }
+           URLSession.shared.dataTask(with: downloadURL) { data, urlResponse, error in
+               guard let data = data, error == nil, urlResponse != nil else {
+                   print("something is wrong")
+                   return
+               }
+               let outputStr  = String(data: data, encoding: String.Encoding.utf8) as String!
+               print(outputStr)
+               do
+               {
+                   let decoder = JSONDecoder()
+                   let downloadedActors = try decoder.decode(Players.self, from: data)
+                   
+                   self.players = downloadedActors.players
+                   DispatchQueue.main.async {
+                   
+                       self.tview.reloadData()
+                   }
+               } catch {
+                 print(error)
+               }
+           }.resume()
+       }
 }
 

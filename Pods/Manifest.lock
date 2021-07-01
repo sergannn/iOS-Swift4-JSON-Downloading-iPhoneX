@@ -1,16 +1,20 @@
 PODS:
+  - LBTATools (1.0.12)
   - NewPopMenu (2.1.2)
 
 DEPENDENCIES:
+  - LBTATools
   - NewPopMenu (~> 2.0)
 
 SPEC REPOS:
   trunk:
+    - LBTATools
     - NewPopMenu
 
 SPEC CHECKSUMS:
+  LBTATools: 389a901a01b9a56bea5682c40cd6e23530f40015
   NewPopMenu: c6129e08e8192f6257ceb5f9a4357e1b59c6e2e7
 
-PODFILE CHECKSUM: fed2e14ea62feedf0c0d59c33e9e5acacd0b5207
+PODFILE CHECKSUM: d3320371ba05f32df63fcb5bab9afa2487d21b2d
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0

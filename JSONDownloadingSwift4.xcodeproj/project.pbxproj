@@ -17,7 +17,14 @@
 		D6F49D66267D03F80014B808 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F49D65267D03F80014B808 /* SpinnerViewController.swift */; };
 		D6F49D68267D10120014B808 /* ttabsBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F49D67267D10120014B808 /* ttabsBarController.swift */; };
 		D6F95337267CAA6700903642 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F95336267CAA6700903642 /* Player.swift */; };
-		D6F9533B267CBDA300903642 /* TsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9533A267CBDA300903642 /* TsViewController.swift */; };
+		F4CE352F268B6D72001A0610 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE352E268B6D72001A0610 /* MenuBar.swift */; };
+		F4CE3532268B6E07001A0610 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE3531268B6E07001A0610 /* Extensions.swift */; };
+		F4CE3536268CA987001A0610 /* TsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9533A267CBDA300903642 /* TsViewController.swift */; };
+		F4CE3538268CAAE8001A0610 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE3537268CAAE8001A0610 /* RootViewController.swift */; };
+		F4CE353A268CB062001A0610 /* stackingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE3539268CB062001A0610 /* stackingCell.swift */; };
+		F4CE353C268CB478001A0610 /* SegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE353B268CB478001A0610 /* SegViewController.swift */; };
+		F4CE353E268CB978001A0610 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE353D268CB978001A0610 /* NavViewController.swift */; };
+		F4CE3568268D38FE001A0610 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE3567268D38FE001A0610 /* LoginFormController.swift */; };
 		FA6CE3CC086B282594C4CF70 /* Pods_JSONDownloadingSwift4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CF100341C08667FD81CA2C /* Pods_JSONDownloadingSwift4.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +45,13 @@
 		D6F49D67267D10120014B808 /* ttabsBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ttabsBarController.swift; sourceTree = "<group>"; };
 		D6F95336267CAA6700903642 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D6F9533A267CBDA300903642 /* TsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TsViewController.swift; sourceTree = "<group>"; };
+		F4CE352E268B6D72001A0610 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		F4CE3531268B6E07001A0610 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F4CE3537268CAAE8001A0610 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		F4CE3539268CB062001A0610 /* stackingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stackingCell.swift; sourceTree = "<group>"; };
+		F4CE353B268CB478001A0610 /* SegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegViewController.swift; sourceTree = "<group>"; };
+		F4CE353D268CB978001A0610 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
+		F4CE3567268D38FE001A0610 /* LoginFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +72,6 @@
 				D1F354507CED829543A894D0 /* Pods-JSONDownloadingSwift4.debug.xcconfig */,
 				2BF17984545BC985757F9BF0 /* Pods-JSONDownloadingSwift4.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +96,9 @@
 		6B02954F1F733F2E00A56D85 /* JSONDownloadingSwift4 */ = {
 			isa = PBXGroup;
 			children = (
+				F4CE353F268CB998001A0610 /* old */,
+				F4CE3530268B6DF8001A0610 /* Helpers */,
+				F4CE352D268B6D41001A0610 /* views */,
 				6B0295501F733F2E00A56D85 /* AppDelegate.swift */,
 				6B0295621F7343F600A56D85 /* ActorCell.swift */,
 				D6F95338267CBA1000903642 /* viewcontrollers */,
@@ -107,9 +123,9 @@
 			isa = PBXGroup;
 			children = (
 				6B0295521F733F2E00A56D85 /* PlayersViewController.swift */,
-				D6F9533A267CBDA300903642 /* TsViewController.swift */,
-				D6F49D65267D03F80014B808 /* SpinnerViewController.swift */,
-				D6F49D67267D10120014B808 /* ttabsBarController.swift */,
+				F4CE3567268D38FE001A0610 /* LoginFormController.swift */,
+				F4CE353B268CB478001A0610 /* SegViewController.swift */,
+				F4CE353D268CB978001A0610 /* NavViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -121,6 +137,34 @@
 				D6F95336267CAA6700903642 /* Player.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		F4CE352D268B6D41001A0610 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		F4CE3530268B6DF8001A0610 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F4CE3531268B6E07001A0610 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F4CE353F268CB998001A0610 /* old */ = {
+			isa = PBXGroup;
+			children = (
+				D6F49D67267D10120014B808 /* ttabsBarController.swift */,
+				D6F49D65267D03F80014B808 /* SpinnerViewController.swift */,
+				D6F9533A267CBDA300903642 /* TsViewController.swift */,
+				F4CE352E268B6D72001A0610 /* MenuBar.swift */,
+				F4CE3539268CB062001A0610 /* stackingCell.swift */,
+				F4CE3537268CAAE8001A0610 /* RootViewController.swift */,
+			);
+			path = old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,10 +266,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-JSONDownloadingSwift4/Pods-JSONDownloadingSwift4-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LBTATools/LBTATools.framework",
 				"${BUILT_PRODUCTS_DIR}/NewPopMenu/PopMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LBTATools.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,12 +287,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B0295631F7343F600A56D85 /* ActorCell.swift in Sources */,
+				F4CE353A268CB062001A0610 /* stackingCell.swift in Sources */,
 				D6F49D68267D10120014B808 /* ttabsBarController.swift in Sources */,
-				D6F9533B267CBDA300903642 /* TsViewController.swift in Sources */,
 				D6F95337267CAA6700903642 /* Player.swift in Sources */,
+				F4CE3538268CAAE8001A0610 /* RootViewController.swift in Sources */,
 				6B0295531F733F2E00A56D85 /* PlayersViewController.swift in Sources */,
+				F4CE3532268B6E07001A0610 /* Extensions.swift in Sources */,
+				F4CE3536268CA987001A0610 /* TsViewController.swift in Sources */,
+				F4CE353E268CB978001A0610 /* NavViewController.swift in Sources */,
+				F4CE3568268D38FE001A0610 /* LoginFormController.swift in Sources */,
 				6B0295511F733F2E00A56D85 /* AppDelegate.swift in Sources */,
 				D6F49D66267D03F80014B808 /* SpinnerViewController.swift in Sources */,
+				F4CE353C268CB478001A0610 /* SegViewController.swift in Sources */,
+				F4CE352F268B6D72001A0610 /* MenuBar.swift in Sources */,
 				6B0295651F7346A500A56D85 /* Tourney.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
